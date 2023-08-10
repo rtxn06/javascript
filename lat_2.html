@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator Sederhana</title>
+<script>
+  function hitung(operasi) {
+    var bilangan1 = parseFloat(document.getElementById("bilangan1").value);
+    var bilangan2 = parseFloat(document.getElementById("bilangan2").value);
+    var hasil = 0;
+
+    switch (operasi) {
+      case '+':
+        hasil = bilangan1 + bilangan2;
+        break;
+      case '-':
+        hasil = bilangan1 - bilangan2;
+        break;
+      case 'x':
+        hasil = bilangan1 * bilangan2;
+        break;
+      case '/':
+        hasil = bilangan1 / bilangan2;
+        break;
+      default:
+        break;
+    }
+
+    document.getElementById("hasil").value = hasil;
+  }
+</script>
+</head>
+<body>
+<h1>Kalkulator Sederhana</h1>
+<p>
+  Bilangan 1: <input type="number" id="bilangan1">
+  Operasi: 
+  <button onclick="hitung('+')">+</button>
+  <button onclick="hitung('-')">-</button>
+  <button onclick="hitung('x')">x</button>
+  <button onclick="hitung('/')">/</button>
+  Bilangan 2: <input type="number" id="bilangan2">
+</p>
+<p>Hasil: <input type="text" id="hasil" readonly></p>
+</body>
+</html>
